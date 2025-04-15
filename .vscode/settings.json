@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "stdbool.h": "c",
+    "regex.h": "c",
+    "string.h": "c"
+  }
+}

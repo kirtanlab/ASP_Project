@@ -1,0 +1,42 @@
+
+ufile files/1.txt ~/smain/ 
+-> Works
+
+ufile files/1.c ~/smain/td/td2/f2 
+-> Works
+
+ufile files/test.zip ~/smain/td1 \
+-> Works
+
+ufile files/test1.pdf ~/smain/td
+
+
+# +ve test cases
+dfile ~/smain/td/td2/f2/1.c 
+dfile ~/smain/td/1.txt
+dfile ~/smain/td1/test1.pdf
+dfile ~/smain/td1/test.zip
+
+
+# +ve test cases
+rmfile ~/smain/td/td2/f2/1.c --> removes but print output as File 1.c either does not exist or you don't have permission to remove it
+rmfile ~/smain/td/1.txt --> removes but print output as File 1.c either does not exist or you don't have permission to remove it
+rmfile ~/smain/td1/test1.pdf
+rmfile ~/smain/test.pdf
+rmfile ~/smain/d1/test.zip -> File test.zip either does not exist or you don't have permission to remove it
+
+# -ve test cases
+dtar .x
+dtar .was
+dtar .asdasdasdasdtxt
+
+# +ve test cases
+dtar .c
+dtar .pdf
+dtar .txt
+
+
+display ~/smain/
+display ~/smain/td/td2/f2
+display ~/smain/td/td1/
+display ~/smain/td1/
